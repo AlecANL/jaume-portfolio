@@ -1,0 +1,35 @@
+@forward '../tools/vars/colors';
+
+.hero-content {
+  margin-inline: 16px;
+  padding-block-start: 80px;
+  color: var(--dark-blue);
+  &__description h1 {
+    margin-block: 16px;
+  }
+  &__description span {
+    font-size: 24px;
+    display: block;
+  }
+  &__description span + span {
+    font-size: 48px;
+  }
+  &__description p {
+    margin-block: 16px;
+  }
+}
+.feed-social {
+  margin-block-start: 16px;
+  margin-block-end: 40px;
+  li {
+    display: inline-block;
+    box-sizing: border-box;
+    inline-size: 44px;
+    block-size: 44px;
+    padding: 10px;
+    margin-inline-end: 16px;
+    border: 2px solid var(--dark-blue);
+    border-radius: 4px;
+    background-color: var(--just-white);
+  }
+}

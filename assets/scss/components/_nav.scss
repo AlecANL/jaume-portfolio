@@ -1,0 +1,76 @@
+@import '../tools/mixins/mixins';
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list {
+  position: fixed;
+  inset-block-start: 10%;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  padding-inline: 16px;
+  padding-block: 40px;
+  background-color: cornflowerblue;
+  clip-path: circle(10% at 87% 10%);
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  &__item {
+    margin-block-end: 21px;
+  }
+  &__item a {
+    text-transform: uppercase;
+  }
+  &.active {
+    clip-path: circle(75%);
+    visibility: visible;
+    transition: clip-path 0.3s ease-in-out;
+  }
+}
+.icon-menu {
+  position: relative;
+  inline-size: 34px;
+  block-size: 34px;
+  &.active .line {
+    background-color: transparent;
+  }
+  &.active .line::before {
+    inset-block-start: 0;
+    transform: rotate(-45deg);
+    transition: all 0.3s ease-in-out;
+  }
+  &.active .line::after {
+    inset-block-end: 0;
+    transform: rotate(45deg);
+    transition: all 0.3s ease-in-out;
+  }
+  @include from(m) {
+    display: none;
+  }
+}
+.line {
+  position: absolute;
+  inset-block-start: 50%;
+  inline-size: 100%;
+  block-size: 4px;
+  background-color: #000;
+  transform: translatey(-50%);
+  &::before {
+    content: '';
+    position: absolute;
+    inset-block-start: -200%;
+    inline-size: 100%;
+    block-size: 4px;
+    background-color: #000;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    inset-block-end: -200%;
+    inline-size: 100%;
+    block-size: 4px;
+    background-color: #000;
+  }
+}

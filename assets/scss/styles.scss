@@ -1,0 +1,28 @@
+// @use './tools/mixins/mixins';
+@forward './components/header';
+@forward './components/nav';
+@forward './pages/index';
+@use './tools/vars/colors';
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--gradient) center/cover no-repeat;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-inline-size: 100%;
+}
+.wrapper {
+  max-inline-size: 1200px;
+  margin: auto;
+}
+
+$deMode: false;
