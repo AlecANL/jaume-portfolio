@@ -39,7 +39,6 @@
   inset-inline-end: 0;
   padding-inline: 16px;
   padding-block: 40px;
-  background-color: cornflowerblue;
   clip-path: circle(10% at 87% 10%);
   visibility: hidden;
   transition: all 0.3s ease-in-out;
@@ -54,6 +53,19 @@
   clip-path: circle(75%);
   visibility: visible;
   transition: clip-path 0.3s ease-in-out;
+}
+@media screen and (min-width: 768px) {
+  .list {
+    position: initial;
+    clip-path: circle(100%);
+    visibility: visible;
+    padding-block: 10px;
+  }
+  .list__item {
+    display: inline-block;
+    padding-inline: 40px;
+    margin: 0;
+  }
 }
 
 .icon-menu {
@@ -105,9 +117,20 @@
   background-color: #000;
 }
 
+.btn {
+  padding-block: 13px;
+  inline-size: 100%;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--dark-blue);
+  color: #fff;
+  text-transform: uppercase;
+}
+
 .hero-content {
   margin-inline: 16px;
   padding-block-start: 80px;
+  padding-block-end: 16px;
   color: var(--dark-blue);
 }
 .hero-content__description h1 {
@@ -122,6 +145,29 @@
 }
 .hero-content__description p {
   margin-block: 16px;
+}
+@media screen and (min-width: 1024px) {
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 115px;
+    padding-block: 180px;
+  }
+  .hero-content__description {
+    grid-column: 1/2;
+    grid-row: 1/1;
+    align-self: center;
+  }
+  .hero-content__description span + span {
+    font-size: 59px;
+    line-height: 99px;
+  }
+  .hero-content__description button {
+    inline-size: 255px;
+  }
+  .hero-content__image {
+    grid-column: 2/3;
+  }
 }
 
 .feed-social {
@@ -138,6 +184,40 @@
   border: 2px solid var(--dark-blue);
   border-radius: 4px;
   background-color: var(--just-white);
+}
+
+.about-section-content {
+  margin-inline: 16px;
+  padding-block-start: 40px;
+  text-align: center;
+}
+.about-section-content svg {
+  stroke: var(--dark-blue);
+  fill: var(--dark-blue);
+  inline-size: 80px;
+  block-size: 80px;
+}
+.about-section-content h2 {
+  margin-block: 24px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 38px;
+}
+.about-section-content p {
+  font-size: 24px;
+  line-height: 38px;
+  font-weight: bold;
+}
+@media screen and (min-width: 1024px) {
+  .about-section-content {
+    padding-block: 120px;
+    padding-inline: 150px;
+  }
+  .about-section-content h2 {
+    font-size: 34px;
+    line-height: 55px;
+    font-weight: 300;
+  }
 }
 
 body {

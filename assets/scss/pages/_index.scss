@@ -1,8 +1,11 @@
 @forward '../tools/vars/colors';
+@forward '../components/buttons';
+@import '../tools/mixins/mixins';
 
 .hero-content {
   margin-inline: 16px;
   padding-block-start: 80px;
+  padding-block-end: 16px;
   color: var(--dark-blue);
   &__description h1 {
     margin-block: 16px;
@@ -16,6 +19,27 @@
   }
   &__description p {
     margin-block: 16px;
+  }
+  @include from(l) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 115px;
+    padding-block: 180px;
+    &__description {
+      grid-column: 1 / 2;
+      grid-row: 1 / 1;
+      align-self: center;
+    }
+    &__description span + span {
+      font-size: 59px;
+      line-height: 99px;
+    }
+    &__description button {
+      inline-size: 255px;
+    }
+    &__image {
+      grid-column: 2 / 3;
+    }
   }
 }
 .feed-social {
@@ -31,5 +55,37 @@
     border: 2px solid var(--dark-blue);
     border-radius: 4px;
     background-color: var(--just-white);
+  }
+}
+
+.about-section-content {
+  margin-inline: 16px;
+  padding-block-start: 40px;
+  text-align: center;
+  svg {
+    stroke: var(--dark-blue);
+    fill: var(--dark-blue);
+    inline-size: 80px;
+    block-size: 80px;
+  }
+  h2 {
+    margin-block: 24px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 38px;
+  }
+  p {
+    font-size: 24px;
+    line-height: 38px;
+    font-weight: bold;
+  }
+  @include from(l) {
+    padding-block: 120px;
+    padding-inline: 150px;
+    h2 {
+      font-size: 34px;
+      line-height: 55px;
+      font-weight: 300;
+    }
   }
 }

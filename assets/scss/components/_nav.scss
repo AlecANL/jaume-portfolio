@@ -13,7 +13,7 @@
   inset-inline-end: 0;
   padding-inline: 16px;
   padding-block: 40px;
-  background-color: cornflowerblue;
+  // background-color: cornflowerblue;
   clip-path: circle(10% at 87% 10%);
   visibility: hidden;
   transition: all 0.3s ease-in-out;
@@ -27,6 +27,17 @@
     clip-path: circle(75%);
     visibility: visible;
     transition: clip-path 0.3s ease-in-out;
+  }
+  @include from(m) {
+    position: initial;
+    clip-path: circle(100%);
+    visibility: visible;
+    padding-block: 10px;
+    &__item {
+      display: inline-block;
+      padding-inline: 40px;
+      margin: 0;
+    }
   }
 }
 .icon-menu {

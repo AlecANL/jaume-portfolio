@@ -1,7 +1,7 @@
 // @use './tools/mixins/mixins';
 @forward './components/header';
 @forward './components/nav';
-@forward './pages/index';
+@use './pages/index';
 @use './tools/vars/colors';
 
 body {
