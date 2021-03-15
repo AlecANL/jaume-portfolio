@@ -2,6 +2,12 @@
 @forward '../components/buttons';
 @import '../tools/mixins/mixins';
 
+.header-content {
+  @include from(sm) {
+    padding-inline: 50px;
+  }
+}
+
 .hero-content {
   margin-inline: 16px;
   padding-block-start: 80px;
@@ -20,11 +26,22 @@
   &__description p {
     margin-block: 16px;
   }
+  @include from(sm) {
+    padding-inline: 50px;
+  }
+  @include from(m) {
+    padding-block: 150px;
+    padding-inline: 150px;
+    &__description .btn {
+      inline-size: 255px;
+    }
+  }
   @include from(l) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 115px;
     padding-block: 180px;
+    padding-inline: 50px;
     &__description {
       grid-column: 1 / 2;
       grid-row: 1 / 1;
@@ -40,6 +57,9 @@
     &__image {
       grid-column: 2 / 3;
     }
+  }
+  @include from(x) {
+    padding-inline: 0;
   }
 }
 .feed-social {
@@ -79,6 +99,12 @@
     line-height: 38px;
     font-weight: bold;
   }
+  @include from(sm) {
+    padding-inline: 50px;
+  }
+  @include from(m) {
+    padding-inline: 150px;
+  }
   @include from(l) {
     padding-block: 120px;
     padding-inline: 150px;
@@ -87,5 +113,23 @@
       line-height: 55px;
       font-weight: 300;
     }
+  }
+}
+.projects-content {
+  display: grid;
+  margin-inline: 16px;
+  margin-block: 40px;
+  padding-block: 40px;
+  @include from(sm) {
+    padding-inline: 50px;
+  }
+  @include from(m) {
+    padding-inline: 150px;
+  }
+  @include from(l) {
+    padding-inline: 50px;
+  }
+  @include from(x) {
+    padding-inline: 0;
   }
 }

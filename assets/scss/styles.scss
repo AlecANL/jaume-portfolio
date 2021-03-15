@@ -1,6 +1,7 @@
 // @use './tools/mixins/mixins';
 @forward './components/header';
 @forward './components/nav';
+@use './components/project';
 @use './pages/index';
 @use './tools/vars/colors';
 

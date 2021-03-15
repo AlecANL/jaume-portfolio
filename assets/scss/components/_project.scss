@@ -1,0 +1,126 @@
+@forward '../tools/vars/colors';
+@import '../tools/mixins/mixins';
+
+.project {
+  display: grid;
+  &__review {
+    margin-inline: 0;
+    margin-block: 0;
+    padding-inline: 24px;
+    padding-block: 24px;
+    background: rgba(255, 255, 255, 0.2);
+    // backdrop-filter: blur(39.7657px);
+    text-align: center;
+    border-radius: 24px;
+  }
+  &__review p {
+    text-align: initial;
+  }
+  &__review p + p {
+    font-size: 12px;
+    line-height: 19px;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+
+  &__description span {
+    position: relative;
+    display: inline-block;
+    padding-inline: 8px;
+    background-color: var(--dark-blue);
+    color: var(--just-white);
+    font-size: 24px;
+    font-weight: 700;
+  }
+  &__description span::before {
+    position: absolute;
+    content: '';
+    display: block;
+    inset-block-start: 0;
+    inset-block-end: -5px;
+    inset-inline-start: -5px;
+    inset-inline-end: 0;
+    background-color: var(--just-white);
+    z-index: -1;
+  }
+  &__description p {
+    margin-block: 16px;
+    font-size: 16px;
+    line-height: 29px;
+  }
+  @include from(l) {
+    grid-template-columns: 1fr 450px;
+    &__review {
+      padding-inline: 200px;
+      padding-block: 90px;
+      // padding-block: 150px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    &__description {
+      align-self: center;
+    }
+    &__image {
+      justify-self: center;
+    }
+    &__review .quote {
+      text-align: center;
+      box-sizing: border-box;
+      font-size: 34px;
+      line-height: 55px;
+    }
+
+    &__review p + p {
+      font-size: 24px;
+    }
+  }
+  @include from(x) {
+    &__review {
+      padding-block: 90px;
+    }
+  }
+}
+.buttons {
+  @include from(l) {
+    display: flex;
+    gap: 24px;
+  }
+}
+
+.review-content {
+  position: relative;
+  z-index: 0;
+  @include from(l) {
+    grid-column: span 2;
+  }
+}
+.border {
+  content: '';
+  position: absolute;
+  backdrop-filter: blur(39.7657px);
+  z-index: -1;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  inset-block-start: 0;
+  inset-block-end: 0;
+  border-radius: 1.5rem;
+  padding: 4px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    /* this will cover only the content (no padding) */
+      linear-gradient(#fff 0 0) padding-box; /* this will cover the content and the padding */
+  -webkit-mask-composite: destination-out;
+}
+.border::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  inset-block-start: 0;
+  inset-block-end: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.75) 0,
+    rgba(255, 255, 255, 0) 40%
+  );
+  transition: transform 0.7s linear;
+}
