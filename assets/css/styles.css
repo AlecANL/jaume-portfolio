@@ -43,6 +43,7 @@
   clip-path: circle(10% at 87% 10%);
   visibility: hidden;
   transition: all 0.3s ease-in-out;
+  background-color: var(--just-white);
 }
 .list__item {
   margin-block-end: 21px;
@@ -120,6 +121,7 @@
 
 .project {
   display: grid;
+  margin-block-end: 80px;
 }
 .project__review {
   margin-inline: 0;
@@ -147,6 +149,7 @@
   color: var(--just-white);
   font-size: 24px;
   font-weight: 700;
+  text-transform: uppercase;
 }
 .project__description span::before {
   position: absolute;
@@ -169,7 +172,7 @@
     grid-template-columns: 1fr 450px;
   }
   .project__review {
-    padding-inline: 200px;
+    padding-inline: 150px;
     padding-block: 90px;
     box-sizing: border-box;
     text-align: center;
@@ -180,6 +183,11 @@
   .project__image {
     justify-self: center;
   }
+}
+@media screen and (min-width: 1366px) {
+  .project__review {
+    padding-block: 90px;
+  }
   .project__review .quote {
     text-align: center;
     box-sizing: border-box;
@@ -188,11 +196,7 @@
   }
   .project__review p + p {
     font-size: 24px;
-  }
-}
-@media screen and (min-width: 1366px) {
-  .project__review {
-    padding-block: 90px;
+    text-align: center;
   }
 }
 
@@ -206,6 +210,7 @@
 .review-content {
   position: relative;
   z-index: 0;
+  margin-block-start: 40px;
 }
 @media screen and (min-width: 1024px) {
   .review-content {
@@ -273,6 +278,7 @@
 }
 
 .hero-content {
+  position: relative;
   margin-inline: 16px;
   padding-block-start: 80px;
   padding-block-end: 16px;
@@ -420,6 +426,154 @@
   .projects-content {
     padding-inline: 0;
   }
+}
+
+.contact-content {
+  margin-inline: 16px;
+  padding-block-start: 40px;
+  padding-block-end: 80px;
+}
+.contact-content span {
+  position: relative;
+  display: inline-block;
+  padding-inline: 8px;
+  background-color: var(--dark-blue);
+  color: var(--just-white);
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.contact-content span::before {
+  position: absolute;
+  content: "";
+  display: block;
+  inset-block-start: 0;
+  inset-block-end: -5px;
+  inset-inline-start: -5px;
+  inset-inline-end: 0;
+  background-color: var(--just-white);
+  z-index: -1;
+}
+.contact-content p {
+  font-size: 16px;
+  color: var(--just-white);
+}
+@media screen and (min-width: 480px) {
+  .contact-content {
+    padding-inline: 50px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .contact-content {
+    padding-inline: 150px;
+  }
+  .contact-content span {
+    inline-size: 100%;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .contact-content {
+    padding-inline: 300px;
+  }
+  .contact-content p {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1366px) {
+  .contact-content {
+    padding-inline: 300px;
+  }
+}
+
+form .form-group {
+  margin-block-end: 16px;
+}
+form .form-group label {
+  display: inline-block;
+  inline-size: 100%;
+  font-family: 700;
+  margin-block-end: 8px;
+}
+form .form-group input,
+form .form-group textarea {
+  box-sizing: border-box;
+  inline-size: 100%;
+  border: none;
+  border-radius: 4px;
+  padding-inline: 16px;
+  padding-block: 12px;
+  font-size: 16px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  margin-inline: 16px;
+  text-align: center;
+}
+.footer-content span.logo {
+  display: none;
+  color: var(--dark-blue);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.footer-content p {
+  order: 1;
+  color: var(--just-white);
+}
+.footer-content p span {
+  display: block;
+}
+.footer-content .feed-social {
+  margin-block-end: 24px;
+}
+@media screen and (min-width: 1024px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .footer-content span.logo {
+    display: block;
+    align-self: center;
+  }
+  .footer-content p {
+    align-self: center;
+  }
+  .footer-content p span {
+    display: inline-block;
+  }
+  .footer-content .feed-social {
+    order: 1;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .sphere-blur {
+    position: absolute;
+    position: absolute;
+    inline-size: 400px;
+    block-size: 400px;
+    border-radius: 100%;
+  }
+}
+
+.sphere--hero {
+  inset-inline-start: -400px;
+  inset-block-start: 380px;
+}
+@media screen and (min-width: 1920px) {
+  .sphere--hero {
+    inset-inline-start: -600px;
+  }
+}
+
+.sphere--blue {
+  background: radial-gradient(50% 50% at 50% 50%, rgba(78, 53, 191, 0.692) 0%, rgba(191, 53, 142, 0) 100%);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

@@ -5,6 +5,10 @@
 @use './pages/index';
 @use './tools/vars/colors';
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;

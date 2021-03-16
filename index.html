@@ -25,8 +25,8 @@
             </div>
             <ul class="list">
               <li class="list__item"><a href="#">hola</a></li>
-              <li class="list__item"><a href="#">proyectos</a></li>
-              <li class="list__item"><a href="#">hablemos</a></li>
+              <li class="list__item"><a href="#projects">proyectos</a></li>
+              <li class="list__item"><a href="#contact">hablemos</a></li>
             </ul>
           </nav>
         </div>
@@ -35,6 +35,7 @@
     <section class="hero">
       <div class="wrapper">
         <div class="hero-content">
+          <div class="sphere-blur sphere--hero sphere--blue"></div>
           <img
             src="./assets/images/jaume.png"
             alt="selfie about jaume"
@@ -108,10 +109,10 @@
         </div>
       </div>
     </section>
-    <main class="projects-section">
+    <main class="projects-section" id="projects">
       <div class="wrapper">
-        <div class="projects-content">
-          <article class="project">
+        <div class="projects-content" id="projects-content">
+          <!-- <article class="project">
             <div class="project__image">
               <img
                 src="./assets/images/leonidas-project.png"
@@ -140,12 +141,98 @@
                 <p>leonidas esteban / cofundador y ceo leonidasesteban.com</p>
               </blockquote>
               <i class="border"></i>
-              <!-- <div class="border"> -->
-              <!-- </div> -->
             </div>
-          </article>
+          </article> -->
         </div>
       </div>
     </main>
+    <section class="contact-section" id="contact">
+      <div class="wrapper">
+        <div class="contact-content">
+          <span>hablemos</span>
+          <p>
+            Si está interesado en trabajar conmigo en su próximo proyecto, no
+            dude en ponerse en contacto conmigo.
+          </p>
+          <form>
+            <div class="form-group">
+              <label for="name">nombre completo</label>
+              <input
+                id="name"
+                placeholder="Juan"
+                type="text"
+                aria-label="name complete"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input
+                placeholder="juan@gmail.com"
+                type="email"
+                name="email"
+                id="email"
+                aria-label="email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="message">Mensaje</label>
+              <textarea
+                name="message"
+                id="message"
+                cols="30"
+                rows="10"
+              ></textarea>
+            </div>
+            <button class="btn btn--dark-blue">enviar mensaje</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="wrapper">
+        <div class="footer-content">
+          <span class="logo">logo</span>
+          <p>
+            <span>Hecho con 🤍 de Jaume </span>
+            <span>Copyright 2021 - Todos los derechos reservados.</span>
+          </p>
+          <ul class="feed-social">
+            <li>
+              <a href="#">
+                <img
+                  src="./assets/images/icons/icon-phone.svg"
+                  alt="phone icon"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="./assets/images/icons/icon-important_mail.svg"
+                  alt="email icon"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="./assets/images/icons/icon-instagram.svg"
+                  alt="instagram icon"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="./assets/images/icons/icon-twitter_squared.svg"
+                  alt="twitter icon"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="./assets/js/app.js" defer></script>
   </body>
 </html>

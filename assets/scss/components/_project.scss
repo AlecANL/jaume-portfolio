@@ -3,6 +3,7 @@
 
 .project {
   display: grid;
+  margin-block-end: 80px;
   &__review {
     margin-inline: 0;
     margin-block: 0;
@@ -31,6 +32,7 @@
     color: var(--just-white);
     font-size: 24px;
     font-weight: 700;
+    text-transform: uppercase;
   }
   &__description span::before {
     position: absolute;
@@ -51,7 +53,7 @@
   @include from(l) {
     grid-template-columns: 1fr 450px;
     &__review {
-      padding-inline: 200px;
+      padding-inline: 150px;
       padding-block: 90px;
       // padding-block: 150px;
       box-sizing: border-box;
@@ -63,6 +65,11 @@
     &__image {
       justify-self: center;
     }
+  }
+  @include from(x) {
+    &__review {
+      padding-block: 90px;
+    }
     &__review .quote {
       text-align: center;
       box-sizing: border-box;
@@ -72,11 +79,7 @@
 
     &__review p + p {
       font-size: 24px;
-    }
-  }
-  @include from(x) {
-    &__review {
-      padding-block: 90px;
+      text-align: center;
     }
   }
 }
@@ -90,6 +93,7 @@
 .review-content {
   position: relative;
   z-index: 0;
+  margin-block-start: 40px;
   @include from(l) {
     grid-column: span 2;
   }
