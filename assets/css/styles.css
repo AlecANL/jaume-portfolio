@@ -119,9 +119,16 @@
   background-color: #000;
 }
 
+.navigation .logo {
+  align-self: center;
+}
+
 .project {
   display: grid;
   margin-block-end: 80px;
+}
+.project__image {
+  justify-self: center;
 }
 .project__review {
   margin-inline: 0;
@@ -170,6 +177,16 @@
 @media screen and (min-width: 1024px) {
   .project {
     grid-template-columns: 1fr 450px;
+  }
+  .project.right-side {
+    grid-template-columns: 450px 1fr;
+  }
+  .project.right-side .project__description {
+    grid-column: 1/1;
+    grid-row: 1/1;
+  }
+  .project.right-side .project__image {
+    grid-column: 2/2;
   }
   .project__review {
     padding-inline: 150px;
@@ -517,6 +534,7 @@ form .form-group textarea {
   color: var(--dark-blue);
   font-weight: bold;
   text-transform: uppercase;
+  align-self: center;
 }
 .footer-content p {
   order: 1;

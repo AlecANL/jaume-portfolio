@@ -4,6 +4,9 @@
 .project {
   display: grid;
   margin-block-end: 80px;
+  &__image {
+    justify-self: center;
+  }
   &__review {
     margin-inline: 0;
     margin-block: 0;
@@ -50,8 +53,19 @@
     font-size: 16px;
     line-height: 29px;
   }
+
   @include from(l) {
     grid-template-columns: 1fr 450px;
+    &.right-side {
+      grid-template-columns: 450px 1fr;
+    }
+    &.right-side .project__description {
+      grid-column: 1 / 1;
+      grid-row: 1 / 1;
+    }
+    &.right-side .project__image {
+      grid-column: 2/ 2;
+    }
     &__review {
       padding-inline: 150px;
       padding-block: 90px;

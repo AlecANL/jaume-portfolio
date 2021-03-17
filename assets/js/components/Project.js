@@ -1,8 +1,8 @@
 import { Review } from './Review.js';
 
-export function Project({ image, name, description, review }) {
+export function Project({ image, name, description, review, isSide }) {
   return `
-        <article class="project">
+        <article class="project ${isSide ? 'right-side' : ''} ">
             <div class="project__image">
               <img
                 src="${image}"
