@@ -7,7 +7,7 @@
 
 .list {
   position: fixed;
-  inset-block-start: 10%;
+  inset-block-start: 8%;
   inset-block-end: 0;
   inset-inline-start: 0;
   inset-inline-end: 0;
@@ -28,6 +28,9 @@
     clip-path: circle(75%);
     visibility: visible;
     transition: clip-path 0.3s ease-in-out;
+  }
+  @include from(s) {
+    inset-block-start: 10%;
   }
   @include from(m) {
     position: initial;

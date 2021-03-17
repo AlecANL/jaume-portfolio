@@ -34,7 +34,7 @@
 
 .list {
   position: fixed;
-  inset-block-start: 10%;
+  inset-block-start: 8%;
   inset-block-end: 0;
   inset-inline-start: 0;
   inset-inline-end: 0;
@@ -55,6 +55,11 @@
   clip-path: circle(75%);
   visibility: visible;
   transition: clip-path 0.3s ease-in-out;
+}
+@media screen and (min-width: 320px) {
+  .list {
+    inset-block-start: 10%;
+  }
 }
 @media screen and (min-width: 768px) {
   .list {
